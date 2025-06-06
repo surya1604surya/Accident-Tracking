@@ -1,0 +1,97 @@
+body {
+  background-color: #98D2C0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.maintag{
+  margin-top: 10%;
+}
+/* Container for First Row */
+.firstRow {
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+  width: 100%;
+  margin-top: 50px;
+}
+
+/* Container for Second Row */
+.secondRow {
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+  width: 100%;
+  margin-top: 30px;
+}
+
+/* Button Styles */
+.b0, .b1, .b2, .b3, .b4 {
+  width: 25%;
+  height: 200px;
+  background: #F6F8D5;
+  font-size: 50px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Second-row buttons */
+.b3, .b4 {
+  width: 35%;
+}
+
+/* Hover Effect */
+.b0:hover, .b1:hover, .b2:hover, .b3:hover, .b4:hover {
+  background-color: #205781;
+  color: #F6F8D5;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+/* Header */
+.header {
+  background-color: #001F3F; /* Dark navy blue */
+  border-bottom: 2px solid #A7E0E3; /* Light cyan */
+}
+
+/* Title */
+.title {
+  color: #A7E0E3; /* Light cyan */
+}
+
+/* Navigation Links */
+.nav a {
+  color: #A7E0E3; /* Light cyan */
+}
+
+.nav a:hover {
+  color: white;
+}
+
+/* Footer */
+.footer {
+  background-color: #001F3F; /* Dark navy blue */
+  color: #A7E0E3; /* Light cyan */
+}
+
+/* Background */
+body {
+  background-color: #B3E5D6; /* Light teal */
+}
+
+/* Button Styles */
+.b0, .b1, .b2, .b3, .b4 {
+  background: #FDF6C5; /* Soft yellow */
+  color: black;
+}
+
+/* Hover Effect */
+.b0:hover, .b1:hover, .b2:hover, .b3:hover, .b4:hover {
+  background-color: #003F7D; /* Navy */
+  color: white;
+}
+

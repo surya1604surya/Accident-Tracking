@@ -1,0 +1,72 @@
+.div1 {   
+    width: 70%;
+    max-width: 800px; 
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    background: #FFF2F2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    margin: auto;
+    margin-top: 50px;
+}
+
+/* Table Container */
+.tableContainer {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* Table Styling */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 18px;
+    border: 2px solid black;
+    text-align: left;
+}
+
+/* Table Header */
+.th {
+    background: #D76C82;
+    color: white;
+    font-weight: bold;
+    padding: 15px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+/* Table Rows */
+.td {
+    padding: 12px;
+    border: 2px solid black;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Alternate Row Background */
+.evenRow {
+    background: #FCE4EC;
+}
+
+/* Hover Effect */
+.hoverRow:hover {
+    background: #D76C82 !important;
+    color: white !important;
+    cursor: pointer;
+}
+
+/* Prevent Text Selection */
+.noSelect {
+    user-select: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .div1 {
+        width: 90%;
+        padding: 15px;
+    }
+    .table {
+        font-size: 14px;
+    }
+}

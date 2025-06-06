@@ -1,0 +1,62 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Push items apart */
+    height: 60px;
+    width: 100vw; /* Full width */
+    padding: 10px 20px;
+    /* background-color: rgb(230, 255, 7); */
+    /* border-bottom: 2px solid rgb(85, 111, 5); */
+    position: fixed; /* Fix header at top */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure it's above other content */
+    box-sizing: border-box;
+}
+
+/* Title (ACCIDENT TRACKING) */
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    text-transform: uppercase;
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Navigation links */
+.nav {
+    display: flex;
+    gap: 30px; /* Space between links */
+    flex-wrap: wrap; /* Prevent overflow on small screens */
+}
+
+.nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+    white-space: nowrap; /* Prevent text breaking */
+}
+
+.nav a:hover {
+    color: brown;
+    font-size: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Stack items on smaller screens */
+        height: auto;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}

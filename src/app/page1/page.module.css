@@ -1,0 +1,56 @@
+body{   
+    background:  #FFEBEE;
+}
+.div1 {
+    width: 40%;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 15%;
+    margin-left: 30%;
+    height: 300px;
+    background:  #FFF8E1;
+    color: #D32F2F;
+    /* color: #D76C82; */
+}
+
+.div1 input {  /* ✅ Scoped inside .div1 */
+    width: 80%;
+    padding: 8px;
+    margin-top: 10px;
+    height: 30px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #E3E8EF;
+    border: 1px solid #CCCCCC;
+}
+.div1 label{
+    font-size: 30px;
+}
+
+.btn {
+    width: 80px;  /* Increased width for better visibility */
+    height: 30px; /* Increased height */
+    background-color: #D32F2F;
+    color: #FFF8E1;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    display: block;  /* Makes margin-top work properly */
+    margin: 10px auto;  /* Centers the button horizontally and adds top margin */
+}
+
+.in{
+    width: 80%;
+    padding: 8px;
+    margin-top: 10px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #E3E8EF;
+    border: 1px solid #CCCCCC;
+    height: 100px;
+}

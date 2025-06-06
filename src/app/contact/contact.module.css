@@ -1,0 +1,63 @@
+/* contact.module.css */
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff; /* White background for the container */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9; /* Light gray background for the main container */
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #2e3d49; /* Dark Grayish Blue */
+  margin-bottom: 20px;
+  background-color: #e0f7fa; /* Light Blue background for the title */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: #6c757d; /* Light Gray */
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #495057; /* Medium Gray */
+  margin-bottom: 30px;
+}
+
+.contactInfo {
+  text-align: left;
+  font-size: 1.2rem;
+  color: #333333; /* Dark Gray */
+  background-color: #eaf1f4; /* Light Blue background for contact info */
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.contactInfoTitle {
+  font-size: 1.2rem;
+  color: #007bff; /* Blue */
+  margin-top: 20px;
+}
+
+.contactInfoDescription {
+  font-size: 1.1rem;
+  color: #777777; /* Light Gray */
+  margin-top: 10px;
+}
+
+.contactInfoTitle:hover {
+  color: #0056b3; /* Darker Blue when hovered */
+}
+
+.container {
+  background-color: #fccfcf; /* Light Gray background for the entire page */
+}

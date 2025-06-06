@@ -1,0 +1,37 @@
+body {
+    background-color: #E0F7FA; /* Light Blue */
+}
+
+.container {
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+    background: #FFF2F2;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+.title {
+    text-align: center;
+    color: #D76C82;
+}
+
+.section {
+    margin-top: 20px;
+    background: #FCE4EC;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.sectionTitle {
+    color: #D76C82;
+}
+
+.list {
+    padding-left: 20px;
+}
+
+.listItem {
+    margin-bottom: 8px;
+}
