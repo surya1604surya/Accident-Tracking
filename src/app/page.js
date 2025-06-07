@@ -24,14 +24,15 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen max-h-screen min-w-screen max-w-screen">
       {/* <video src='h1.mp4' /> */}
-      <video 
-  src="bghy.mp4" 
+    <video 
+  src="/bghy.mp4" 
   autoPlay 
   muted 
   loop 
   preload="metadata" 
   className={styles.backgroundVideo} 
-></video>
+/>
+
       <Header className={styles.title} />
       <main className={styles.maintag}>
         <div className={styles.firstRow}>
