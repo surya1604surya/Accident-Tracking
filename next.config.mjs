@@ -1,12 +1,8 @@
-/** @type {import('next').NextConfig} */
-// const nextConfig = {};
-
-// export default nextConfig;
 import withVideos from 'next-videos';
 
 const nextConfig = withVideos({
   reactStrictMode: true,
-  output:"export",
+  output: "export",
 });
 
 export default nextConfig;
