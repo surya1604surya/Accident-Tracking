@@ -10,74 +10,76 @@ export default function Page1() {
   const [sodhi, setsodhi] = useState("");
   const router = useRouter();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!vehicleNumber.trim()) {
-      alert("Please enter a vehicle number.");
-      return;
-    }
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+  if (!vehicleNumber.trim()) {
+    alert("Please enter a vehicle number.");
+    return;
+  }
 
+  try {
+    const response = await fetch("/api/getUser", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ vehicleNumber }),
+    });
+
+    const text = await response.text(); // ✅ Only read once
     let data;
 
     try {
-      const response = await fetch("/api/getUser", {
+      data = JSON.parse(text);
+    } catch (e) {
+      console.error("❌ Failed to parse JSON from /api/getUser:", text);
+      setError("Invalid server response from getUser API.");
+      return;
+    }
+
+    if (response.ok) {
+      setUser(data);
+      setError(null);
+
+      const emailRes = await fetch("/api/sendEmail", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ vehicleNumber }),
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email1,
+          email2: data.email2,
+          locationDetails: sodhi,
+          vehicleNumber: vehicleNumber,
+        }),
       });
 
+      const emailText = await emailRes.text(); // ✅ Only read once
+      let emailData;
+
       try {
-        data = await response.json();
+        emailData = JSON.parse(emailText);
       } catch (e) {
-        const text = await response.text();
-        console.error("Non-JSON response from /api/getUser:", text);
-        setError("Invalid server response from getUser API.");
+        console.error("❌ Failed to parse JSON from /api/sendEmail:", emailText);
+        alert("❌ Email API returned invalid response.");
         return;
       }
 
-      if (response.ok) {
-        setUser(data);
-        setError(null);
-
-        const emailRes = await fetch("/api/sendEmail", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            name: data.name,
-            email: data.email1,
-            email2: data.email2,
-            locationDetails: sodhi,
-            vehicleNumber: vehicleNumber,
-          }),
-        });
-
-        let emailData;
-        try {
-          emailData = await emailRes.json();
-        } catch (e) {
-          const text = await emailRes.text();
-          console.error("Non-JSON response from /api/sendEmail:", text);
-          alert("❌ Email API returned invalid response.");
-          return;
-        }
-
-        if (emailRes.ok) {
-          alert("📧 Email sent successfully!");
-          router.push("/success2");
-        } else {
-          console.error(emailData.error);
-          alert("❌ Failed to send email.");
-        }
+      if (emailRes.ok) {
+        alert("📧 Email sent successfully!");
+        router.push("/success2");
       } else {
-        setUser(null);
-        setError(data.message || "User not found.");
+        console.error("❌ Email send error:", emailData.error);
+        alert("❌ Failed to send email.");
       }
-
-    } catch (error) {
-      console.error("Network or unexpected error:", error);
-      setError("There was an error. Please try again later.");
+    } else {
+      setUser(null);
+      setError(data.message || "User not found.");
     }
-  };
+
+  } catch (error) {
+    console.error("Network or unexpected error:", error);
+    setError("There was an error. Please try again later.");
+  }
+};
+
 
   // ✅ Add this return block!
   return (
