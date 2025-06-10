@@ -1,35 +1,31 @@
-// pages/api/getUser.js
-import dbConnect from "../../lib/dbConnect";  // Assuming dbConnect is set up
-import User from "../../models/User";  // Your user model
+// src/app/api/getUser/route.js
+import { NextResponse } from "next/server";
+import dbConnect from "@/lib/dbConnect"; // use relative path if no ts/jsconfig
+import User from "@/models/User";
 
-export default async function handler(req, res) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ message: "Method Not Allowed" });
-  }
-
-  const { vehicleNumber } = req.body;
-
-  if (!vehicleNumber) {
-    return res.status(400).json({ message: "Vehicle number is required!" });
-  }
-
+export async function POST(req) {
   try {
-    await dbConnect();
+    const { vehicleNumber } = await req.json();
 
+    if (!vehicleNumber) {
+      return NextResponse.json({ message: "Vehicle number is required!" }, { status: 400 });
+    }
+
+    await dbConnect();
     const user = await User.findOne({ vehicleNumber });
 
     if (!user) {
-      return res.status(404).json({ message: "User not found!" });
+      return NextResponse.json({ message: "User not found!" }, { status: 404 });
     }
 
-    // Send back user data (excluding sensitive info if needed)
-    return res.status(200).json({
+    return NextResponse.json({
       name: user.name,
       email1: user.email1,
       email2: user.email2,
-    });
+    }, { status: 200 });
+
   } catch (error) {
     console.error("Error retrieving user:", error);
-    return res.status(500).json({ message: "Internal Server Error" });
+    return NextResponse.json({ message: "Internal Server Error" }, { status: 500 });
   }
 }
