@@ -1,7 +1,7 @@
 /* globals.css */
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #ffffff;
@@ -17,7 +17,7 @@
 
 body {
   display: flex;
-  background-color: #E0F7FA;
+  background-color: #E0F7FA; /* This will be overridden by --background if body CSS is placed after the root variables */
   margin: 0;
 }
 
@@ -25,7 +25,7 @@ html, body {
   height: 100%;
 }
 
-body {/* globals.css */
+body { /* This appears to be a duplicate or intended to override the previous body rule */
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
