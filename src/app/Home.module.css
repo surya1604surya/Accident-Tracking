@@ -1,28 +1,28 @@
 /* --------------------------
-   Body & Layout
+   Body & Layout
 --------------------------- */
 .homeBody {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  background-color: #B3E5D6;
-  overflow-x: hidden;
+  height: 100vh; /* Changed from min-height to height for full viewport coverage */
+  /* background-color: #B3E5D6; Removed as video handles background */
+  /* overflow-x: hidden; Removed, generally not needed at body level */
   position: relative;
 }
 
 .maintag {
-  flex-grow: 1;
+  flex-grow: 1; /* Ensures maintag takes all available vertical space */
   display: flex;
   flex-direction: column;
-  justify-content: center;     /* Vertically center */
-  align-items: center;         /* Horizontally center */
+  justify-content: center; /* Vertically center content within maintag */
+  align-items: center; /* Horizontally center content within maintag */
   padding: 2rem;
   gap: 3rem;
   animation: fadeSlideDown 1.2s ease-in-out both;
 }
 
 /* --------------------------
-   Background Video
+   Background Video
 --------------------------- */
 .backgroundVideo {
   position: fixed;
@@ -37,23 +37,27 @@
 }
 
 /* --------------------------
-   Button Rows
+   Button Rows
 --------------------------- */
 .firstRow,
 .secondRow {
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Center buttons within their row */
   align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
-  width: 100%;
+  width: 100%; /* Ensure rows take full width for centering within maintag */
   animation: dropIn 1s ease forwards;
 }
 
 /* --------------------------
-   Buttons
+   Buttons
 --------------------------- */
-.b0, .b1, .b2, .b3, .b4 {
+.b0,
+.b1,
+.b2,
+.b3,
+.b4 {
   width: 22%;
   height: 180px;
   border-radius: 15px;
@@ -77,18 +81,29 @@
   animation: fallIn 0.8s ease-in-out forwards;
 }
 
-.b0 { animation-delay: 0.2s; }
-.b1 { animation-delay: 0.4s; }
-.b2 { animation-delay: 0.6s; }
-.b3 { animation-delay: 0.8s; }
-.b4 { animation-delay: 1s; }
+.b0 {
+  animation-delay: 0.2s;
+}
+.b1 {
+  animation-delay: 0.4s;
+}
+.b2 {
+  animation-delay: 0.6s;
+}
+.b3 {
+  animation-delay: 0.8s;
+}
+.b4 {
+  animation-delay: 1s;
+}
 
-.b3, .b4 {
+.b3,
+.b4 {
   width: 32%;
 }
 
 /* --------------------------
-   Button Hover Effects
+   Button Hover Effects
 --------------------------- */
 .b0:hover,
 .b1:hover,
@@ -96,32 +111,32 @@
 .b3:hover,
 .b4:hover {
   background-color: rgba(255, 255, 255, 0.85);
-  color: #001F3F;
+  color: #001f3f;
   transform: scale(1.08);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
   text-shadow: none;
 }
 
 /* --------------------------
-   Header and Footer
+   Header and Footer
 --------------------------- */
 .header {
   width: 100%;
-  background-color: #001F3F;
-  border-bottom: 2px solid #A7E0E3;
+  background-color: #001f3f;
+  border-bottom: 2px solid #a7e0e3;
   padding: 1rem;
   text-align: center;
 }
 
 .title {
-  color: #A7E0E3;
+  color: #a7e0e3;
   font-size: 2.2rem;
   font-weight: bold;
   text-shadow: 1px 1px 4px black;
 }
 
 .nav a {
-  color: #A7E0E3;
+  color: #a7e0e3;
   margin: 0 1rem;
   text-decoration: none;
   font-weight: 500;
@@ -133,15 +148,15 @@
 
 .footer {
   width: 100%;
-  background-color: #001F3F;
-  color: #A7E0E3;
+  background-color: #001f3f;
+  color: #a7e0e3;
   text-align: center;
   padding: 1rem;
   margin-top: auto;
 }
 
 /* --------------------------
-   Animations
+   Animations
 --------------------------- */
 @keyframes fallIn {
   0% {
@@ -180,16 +195,21 @@
 }
 
 /* --------------------------
-   Responsive Design
+   Responsive Design
 --------------------------- */
 @media (max-width: 768px) {
-  .b0, .b1, .b2, .b3, .b4 {
+  .b0,
+  .b1,
+  .b2,
+  .b3,
+  .b4 {
     width: 85%;
     height: 140px;
     font-size: 1.2rem;
   }
 
-  .b3, .b4 {
+  .b3,
+  .b4 {
     width: 85%;
   }
 
@@ -203,13 +223,16 @@
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-  .b0, .b1, .b2 {
+  .b0,
+  .b1,
+  .b2 {
     width: 28%;
     height: 160px;
     font-size: 1.5rem;
   }
 
-  .b3, .b4 {
+  .b3,
+  .b4 {
     width: 40%;
   }
 
