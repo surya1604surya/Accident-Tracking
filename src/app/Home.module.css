@@ -1,130 +1,172 @@
-/* --------------------------
-   Body & Layout
---------------------------- */
+/* Ensure the overall layout adapts */
 .homeBody {
-  display: flex;
-  flex-direction: column;
-  height: 100vh; /* Ensure full viewport height */
-  position: relative;
-  overflow: hidden; /* To prevent potential scrollbars from fixed video */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Use min-height for content flexibility */
+    position: relative;
+    overflow-x: hidden; /* Prevent horizontal scroll on small screens */
+    /* Remove max-h-screen to allow content to push the footer down if needed */
 }
 
+/* Adjust maintag for smaller screens */
 .maintag {
-  
-  flex-grow: 1; /* Take up remaining vertical space */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Center content vertically */
-  align-items: center; /* Center content horizontally */
-/*   padding: 2rem; */
-/*   gap: 3rem; */
-  animation: fadeSlideDown 1.2s ease-in-out both;
-  width: 100%; /* Ensure it spans the width to center rows correctly */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem; /* Add some padding to prevent content from touching edges */
+    gap: 1.5rem; /* Slightly reduce gap on smaller screens if desired */
+    width: 100%;
+    box-sizing: border-box;
+    animation: fadeSlideDown 1.2s ease-in-out both;
 }
 
-/* --------------------------
-   Background Video
---------------------------- */
-.backgroundVideo {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%; /* Use 100% instead of 100vw for better compatibility */
-  height: 100%; /* Use 100% instead of 100vh for better compatibility */
-  object-fit: cover;
-  z-index: -1;
-  opacity: 0.85;
-  filter: brightness(0.85);
-}
-
-/* --------------------------
-   Button Rows
---------------------------- */
+/* Button Rows: Adjust margin and spacing for smaller screens */
 .firstRow,
 .secondRow {
-  margin-top:15%;
-  display: flex;
-  justify-content: center; /* Center buttons within the row */
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-  width: 100%; /* Ensure rows take full width to center their content */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
-  animation: dropIn 1s ease forwards;
+    margin-top: 5%; /* Reduce top margin for better vertical space usage */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.2rem; /* Consistent gap for buttons within rows */
+    width: 100%;
+    box-sizing: border-box;
+    animation: dropIn 1s ease forwards;
 }
 
-/* --------------------------
-   Buttons
---------------------------- */
+/* Buttons: Base styles for all buttons */
 .b0,
 .b1,
 .b2,
 .b3,
 .b4 {
-  width:30%;
-  height: 180px;
-  border-radius: 15px;
-  font-size: 1.8rem;
-  font-weight: 600;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  color: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  text-transform: uppercase;
-/*   letter-spacing: 1px; */
-  opacity: 0;
-  transform: translateY(-50px);
-  animation: fallIn 0.8s ease-in-out forwards;
-  box-sizing: border-box; 
-/*     margin-left:10%; */
-  /* Ensure padding doesn't affect width */
+    width: 90%; /* Default to wider buttons for mobile-first approach */
+    max-width: 300px; /* Set a max-width to prevent them from becoming too wide on large screens */
+    height: 120px; /* Slightly reduce height for smaller screens */
+    border-radius: 15px;
+    font-size: 1.4rem; /* Adjust base font size */
+    font-weight: 600;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: fallIn 0.8s ease-in-out forwards;
+    box-sizing: border-box;
 }
 
-.b0 {
-  animation-delay: 0.2s;
-/*   margin-left:5%; */
-/*   margin-right:5%; */
-/*   width: 20%; */
-}
-.b1 {
-  animation-delay: 0.4s;
-/*   margin-left:5%; */
-/*   margin-right:2%; */
-/*   width: 20%; */
-}
+/* Specific button width adjustments (can be removed if max-width is sufficient) */
+/* If you want different max-widths for rows, keep these. Otherwise, remove for simpler control. */
+.b0,
+.b1,
 .b2 {
-  animation-delay: 0.6s;
-/*   margin-left:5%; */
-/*   margin-right:10%; */
-/*   width: 20%; */
-}
-.b3 {
-  animation-delay: 0.8s;
-  margin-left:10%;
-/*   margin-right:10%; */
-}
-.b4 {
-  animation-delay: 1s;
-/*   margin-left:10%; */
-/*   margin-right:15%; */
+    /* These will now primarily be controlled by the `max-width` on `.b0, .b1, .b2, .b3, .b4` */
+    /* You can remove these if you prefer a single max-width for all buttons on mobile */
 }
 
 .b3,
 .b4 {
-  width: 30%;
+    /* These will also be controlled by the `max-width` */
 }
 
-/* --------------------------
-   Button Hover Effects
---------------------------- */
+/* Animations remain the same */
+
+/* Header and Footer: Ensure good padding and sizing */
+.header, .footer {
+    padding: 1rem 0.8rem; /* Adjust padding for smaller screens */
+}
+.title {
+    font-size: 1.8rem; /* Base font size for header title */
+}
+
+/* --- Responsive Design Adjustments --- */
+
+/* Phone Size (up to 767px) - Mobile-first approach is handled by base styles */
+@media (max-width: 767px) {
+    .firstRow,
+    .secondRow {
+        margin-top: 2%; /* Further reduce top margin for mobile */
+        gap: 1rem; /* Slightly smaller gap on phones */
+    }
+
+    .b0, .b1, .b2, .b3, .b4 {
+        width: 90%; /* Ensure buttons take up most of the width */
+        height: 100px; /* Make buttons a bit shorter on phones */
+        font-size: 1rem; /* Smaller font size for phones */
+        max-width: none; /* Let them expand to 90% of parent width */
+    }
+
+    .title {
+        font-size: 1.5rem; /* Smaller header title on phones */
+    }
+}
+
+/* Tablet Size (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .firstRow,
+    .secondRow {
+        margin-top: 10%; /* Moderate margin for tablets */
+        gap: 1.5rem; /* Slightly larger gap than phones */
+    }
+
+    .b0, .b1, .b2 {
+        width: 30%; /* Three buttons per row for tablets */
+        height: 150px;
+        font-size: 1.4rem;
+        max-width: 280px; /* Limit individual button width */
+    }
+
+    .b3, .b4 {
+        width: 45%; /* Two buttons per row for tablets */
+        height: 150px;
+        font-size: 1.4rem;
+        max-width: 350px; /* Limit individual button width */
+    }
+
+    .title {
+        font-size: 2rem; /* Standard title size for tablets */
+    }
+}
+
+/* Desktop Size (1025px and up) */
+@media (min-width: 1025px) {
+    .firstRow,
+    .secondRow {
+        margin-top: 15%; /* Original margin for desktop */
+        gap: 2rem; /* Original gap for desktop */
+    }
+
+    .b0, .b1, .b2 {
+        width: 30%;
+        height: 180px;
+        font-size: 1.8rem;
+        max-width: 350px; /* Set a max-width for consistency */
+    }
+
+    .b3, .b4 {
+        width: 30%; /* Make them consistent with other buttons in width */
+        height: 180px;
+        font-size: 1.8rem;
+        max-width: 350px; /* Set a max-width for consistency */
+    }
+    /* You might want to remove the specific left/right margins for b3 and b4 if you want perfectly centered rows on desktop */
+    .b3 {
+        margin-left: 0; /* Remove specific margin on desktop if you want balanced spacing */
+    }
+}
+
+
 .b0:hover,
 .b1:hover,
 .b2:hover,
@@ -140,21 +182,7 @@
 /* --------------------------
    Header and Footer
 --------------------------- */
-.header {
-  width: 100%;
-  background-color: #001f3f;
-  border-bottom: 2px solid #a7e0e3;
-  padding: 1rem;
-  text-align: center;
-  box-sizing: border-box;
-}
-
-.title {
-  color: #a7e0e3;
-  font-size: 2.2rem;
-  font-weight: bold;
-  text-shadow: 1px 1px 4px black;
-}
+]
 
 .nav a {
   color: #a7e0e3;
@@ -167,15 +195,6 @@
   color: white;
 }
 
-.footer {
-  width: 100%;
-  background-color: #001f3f;
-  color: #a7e0e3;
-  text-align: center;
-  padding: 1rem;
-  margin-top: auto;
-  box-sizing: border-box;
-}
 
 /* --------------------------
    Animations
@@ -219,46 +238,3 @@
 /* --------------------------
    Responsive Design
 --------------------------- */
-@media (max-width: 768px) {
-  .b0,
-  .b1,
-  .b2,
-  .b3,
-  .b4 {
-    width: 85%;
-    height: 140px;
-    font-size: 1.2rem;
-  }
-
-  .b3,
-  .b4 {
-    width: 85%;
-  }
-
-  .maintag {
-    gap: 2rem;
-  }
-
-  .title {
-    font-size: 1.8rem;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .b0,
-  .b1,
-  .b2 {
-    width: 28%;
-    height: 160px;
-    font-size: 1.5rem;
-  }
-
-  .b3,
-  .b4 {
-    width: 40%;
-  }
-
-  .title {
-    font-size: 2rem;
-  }
-}
