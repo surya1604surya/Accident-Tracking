@@ -1,6 +1,6 @@
-
-import dbConnect from "../../lib/dbConnect";
-import User from "../../models/User";
+import { NextResponse } from "next/server";
+import dbConnect from "@/lib/dbConnect";       // Use relative path if you don't have jsconfig.json
+import User from "@/models/User";    
 
 
 export default async function handler(req, res) {
