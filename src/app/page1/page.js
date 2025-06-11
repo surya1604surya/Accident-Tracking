@@ -83,6 +83,7 @@ export default function Page1() {
 
   // ✅ Add this return block!
   return (
+    <div className={styles.homeBody}>
     <div className={styles.div1}>
       <h1>Retrieve User by Vehicle Number</h1>
       <form onSubmit={handleSubmit}>
@@ -117,6 +118,7 @@ export default function Page1() {
         </div>
       )}
       */}
+    </div>
     </div>
   );
 }
