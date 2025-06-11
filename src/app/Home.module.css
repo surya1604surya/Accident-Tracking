@@ -4,16 +4,22 @@
 .homeBody {
   display: flex;
   flex-direction: column;
+  justify-content: center;     /* Center vertically */
   align-items: center;
   background-color: #B3E5D6;
   min-height: 100vh;
   overflow-x: hidden;
+  position: relative;
 }
 
 .maintag {
-  margin-top: 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   padding: 1rem;
+  gap: 2rem;
   animation: fadeSlideDown 1.2s ease-in-out both;
 }
 
@@ -39,10 +45,10 @@
 .secondRow {
   display: flex;
   justify-content: center;
-  gap: 5%;
-  width: 100%;
+  align-items: center;
   flex-wrap: wrap;
-  margin-top: 2rem;
+  gap: 2rem;
+  width: 100%;
   animation: dropIn 1s ease forwards;
 }
 
