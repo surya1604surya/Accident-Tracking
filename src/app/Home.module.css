@@ -10,6 +10,7 @@
 }
 
 .maintag {
+  
   flex-grow: 1; /* Take up remaining vertical space */
   display: flex;
   flex-direction: column;
@@ -82,7 +83,9 @@
   opacity: 0;
   transform: translateY(-50px);
   animation: fallIn 0.8s ease-in-out forwards;
-  box-sizing: border-box; /* Ensure padding doesn't affect width */
+  box-sizing: border-box; 
+    margin-left:10%;
+  /* Ensure padding doesn't affect width */
 }
 
 .b0 {
