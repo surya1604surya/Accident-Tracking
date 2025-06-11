@@ -12,12 +12,13 @@
 }
 
 .maintag {
-  display: grid;
-  place-items: center;
   flex-grow: 1;
-  min-height: calc(100vh - 160px); /* Adjust based on header + footer height */
-  gap: 2rem;
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center */
+  align-items: center;     /* Horizontally center */
+  padding: 2rem;
+  gap: 3rem;
   animation: fadeSlideDown 1.2s ease-in-out both;
 }
 
@@ -198,6 +199,13 @@
     font-size: 1.8rem;
   }
 }
+@media (max-width: 768px) {
+  .maintag {
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+}
+
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .b0, .b1, .b2 {
