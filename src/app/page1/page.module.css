@@ -1,22 +1,26 @@
+/* Full page background with no black edges */
 .homeBody {
-  background: #f3f4f6; /* Soft neutral background */
-  min-height: 100vh;
+  background: linear-gradient(to right, #fffde7, #fce4ec); /* pastel gradient */
+  height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  padding: 2rem;
+  box-sizing: border-box;
+  overflow: hidden; /* prevents scrollbars if unnecessary */
 }
 
-/* Card container */
+/* Card UI */
 .div1 {
   width: 100%;
-  max-width: 500px;
-  background: #fff8e1; /* Light cream */
+  max-width: 480px;
+  background: #fff8e1;
   padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
   text-align: center;
   color: #d32f2f;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* Heading */
@@ -25,24 +29,23 @@
   margin-bottom: 1.5rem;
 }
 
-/* Text input */
+/* Input fields */
 .inputHover,
 .in {
   width: 100%;
   padding: 12px;
-  margin-top: 10px;
+  margin-top: 12px;
   font-size: 1rem;
   border-radius: 6px;
   border: 1px solid #ccc;
-  background-color: #e3e8ef;
+  background-color: #f1f3f5;
   box-sizing: border-box;
-  outline: none;
 }
 
 .inputHover:focus,
 .in:focus {
   border-color: #d32f2f;
-  box-shadow: 0 0 5px rgba(211, 47, 47, 0.5);
+  outline: none;
 }
 
 /* Textarea */
@@ -58,9 +61,9 @@
   margin-top: 20px;
   background-color: #d32f2f;
   color: #fff8e1;
-  font-size: 1rem;
   border: none;
   border-radius: 6px;
+  font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -69,16 +72,10 @@
   background-color: #b71c1c;
 }
 
-/* Error text */
-.errorText {
-  color: red;
-  margin-top: 10px;
-}
-
-/* Mobile responsiveness */
+/* Responsive */
 @media (max-width: 600px) {
   .div1 {
-    padding: 1.2rem;
+    padding: 1.5rem;
   }
 
   .div1 h1 {
@@ -89,3 +86,4 @@
     font-size: 0.95rem;
   }
 }
+
