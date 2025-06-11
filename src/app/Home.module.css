@@ -84,13 +84,13 @@
   transform: translateY(-50px);
   animation: fallIn 0.8s ease-in-out forwards;
   box-sizing: border-box; 
-    margin-left:10%;
+/*     margin-left:10%; */
   /* Ensure padding doesn't affect width */
 }
 
 .b0 {
   animation-delay: 0.2s;
-/*   margin-left:2%; */
+  margin-left:5%;
 /*   margin-right:5%; */
 /*   width: 20%; */
 }
@@ -108,7 +108,7 @@
 }
 .b3 {
   animation-delay: 0.8s;
-/*   margin-left:15%; */
+  margin-left:10%;
 /*   margin-right:10%; */
 }
 .b4 {
