@@ -1,6 +1,13 @@
-.homeBody
-{
-    background-color: #E0F7FA; /* Light Blue */
+.homeBody {
+  background: linear-gradient(to right, #fffde7, #fce4ec); /* pastel gradient */
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  overflow: hidden; /* prevents scrollbars if unnecessary */
 }
 
 .container {
