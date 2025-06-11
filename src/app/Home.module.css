@@ -1,264 +1,56 @@
-/* Ensure the overall layout adapts */
-.homeBody {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Use min-height for content flexibility */
-    position: relative;
-    overflow-x: hidden; /* Prevent horizontal scroll on small screens */
-    /* Removed max-h-screen from the main container as it can cause content clipping if content exceeds viewport height.
-       The 'min-h-screen' ensures it's at least viewport height, allowing for scrolling if content is taller. */
+.homeBody{   
+    background:  #FFEBEE;
 }
-
-/* Adjust maintag for smaller screens */
-.maintag {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    padding: 1.5rem; /* Increased overall padding for better spacing from edges */
-    padding-top: 5rem; /* Added specific padding to the top to push content down from header */
-    padding-bottom: 2rem; /* Added specific padding to the bottom to give space above footer */
-    gap: 2rem; /* Consistent gap between rows */
-    width: 100%;
-    box-sizing: border-box;
-    animation: fadeSlideDown 1.2s ease-in-out both;
-}
-
-/* Button Rows: Adjust margin and spacing for smaller screens */
-.firstRow,
-.secondRow {
-    /* Removed margin-top and margin-bottom from rows.
-       The vertical spacing is now primarily managed by 'padding-top'/'padding-bottom' on .maintag
-       and 'gap' on .maintag between the rows. */
-    display: flex;
-    justify-content: center; /* Center buttons within the row */
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1.5rem; /* Adjusted gap within rows for better spacing */
-    width: 100%; /* Ensure rows take full width to center their content */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    animation: dropIn 1s ease forwards;
-}
-
-/* Buttons: Base styles for all buttons */
-.b0,
-.b1,
-.b2,
-.b3,
-.b4 {
-    width: 90%; /* Default to wider buttons for mobile-first approach */
-    max-width: 300px; /* Set a max-width to prevent them from becoming too wide on large screens */
-    height: 120px; /* Slightly reduce height for smaller screens */
-    border-radius: 15px;
-    font-size: 1.4rem; /* Adjust base font size */
-    font-weight: 600;
+.div1 {
+    width: 40%;
+    padding: 20px;
+    border-radius: 10px;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-top: 15%;
+    margin-left: 30%;
+    height: 300px;
+    background:  #FFF8E1;
+    color: #D32F2F;
+    /* color: #D76C82; */
+}
+
+.div1 input {  /* ✅ Scoped inside .div1 */
+    width: 80%;
+    padding: 8px;
+    margin-top: 10px;
+    height: 30px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #E3E8EF;
+    border: 1px solid #CCCCCC;
+}
+.div1 label{
+    font-size: 30px;
+}
+
+.btn {
+    width: 80px;  /* Increased width for better visibility */
+    height: 30px; /* Increased height */
+    background-color: #D32F2F;
+    color: #FFF8E1;
     border: none;
+    border-radius: 5px;
+    font-size: 14px;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    color: white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    text-transform: uppercase;
-    opacity: 0;
-    transform: translateY(-50px);
-    animation: fallIn 0.8s ease-in-out forwards;
-    box-sizing: border-box;
+    text-align: center;
+    display: block;  /* Makes margin-top work properly */
+    margin: 10px auto;  /* Centers the button horizontally and adds top margin */
 }
 
-/* Specific button width adjustments (can be removed if max-width is sufficient) */
-/* If you want different max-widths for rows, keep these. Otherwise, remove for simpler control. */
-.b0,
-.b1,
-.b2 {
-    /* These will now primarily be controlled by the `max-width` on `.b0, .b1, .b2, .b3, .b4` */
-    /* You can remove these if you prefer a single max-width for all buttons on mobile */
-}
-
-.b3,
-.b4 {
-    /* These will also be controlled by the `max-width` */
-}
-
-/* Animations remain the same */
-
-/* Header and Footer: Ensure good padding and sizing */
-.header, .footer {
-    padding: 1rem 0.8rem; /* Adjust padding for smaller screens */
-}
-.title {
-    color: #a7e0e3;
-    font-size: 2.2rem; /* Keep original large size */
-    font-weight: bold;
-    text-shadow: 1px 1px 4px black;
-}
-
-/* --- Responsive Design Adjustments --- */
-
-/* Phone Size (up to 767px) - Mobile-first approach is handled by base styles */
-@media (max-width: 767px) {
-    .maintag {
-        padding-top: 3rem; /* Less top padding on phones */
-        padding-bottom: 1.5rem; /* Less bottom padding on phones */
-        gap: 1rem; /* Smaller gap between rows on phones */
-    }
-
-    .firstRow,
-    .secondRow {
-        /* Removed margin-top: 2% from here */
-        gap: 1rem; /* Slightly smaller gap within rows on phones */
-    }
-
-    .b0, .b1, .b2, .b3, .b4 {
-        width: 90%; /* Ensure buttons take up most of the width */
-        height: 100px; /* Make buttons a bit shorter on phones */
-        font-size: 1rem; /* Smaller font size for phones */
-        max-width: none; /* Let them expand to 90% of parent width */
-    }
-
-    .title {
-        font-size: 1.5rem; /* Smaller header title on phones */
-    }
-}
-
-/* Tablet Size (768px to 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) {
-    .maintag {
-        padding-top: 4rem; /* Moderate top padding for tablets */
-        padding-bottom: 2rem; /* Moderate bottom padding for tablets */
-        gap: 1.5rem; /* Moderate gap between rows */
-    }
-
-    .firstRow,
-    .secondRow {
-        /* Removed margin-top: 10% from here */
-        gap: 1.5rem; /* Slightly larger gap within rows than phones */
-    }
-
-    .b0, .b1, .b2 {
-        width: 30%; /* Three buttons per row for tablets */
-        height: 150px;
-        font-size: 1.4rem;
-        max-width: 280px; /* Limit individual button width */
-    }
-
-    .b3, .b4 {
-        width: 45%; /* Two buttons per row for tablets */
-        height: 150px;
-        font-size: 1.4rem;
-        max-width: 350px; /* Limit individual button width */
-    }
-
-    .title {
-        font-size: 2rem; /* Standard title size for tablets */
-    }
-}
-
-/* Desktop Size (1025px and up) */
-@media (min-width: 1025px) {
-    .maintag {
-        padding-top: 5rem; /* Original top padding for desktop */
-        padding-bottom: 2rem; /* Original bottom padding for desktop */
-        gap: 2rem; /* Original gap for desktop */
-    }
-
-    .firstRow,
-    .secondRow {
-        /* Removed margin-top: 15% from here */
-        gap: 2rem; /* Original gap within rows for desktop */
-    }
-
-    .b0, .b1, .b2 {
-        width: 30%;
-        height: 180px;
-        font-size: 1.8rem;
-        max-width: 350px; /* Set a max-width for consistency */
-    }
-
-    .b3, .b4 {
-        width: 30%; /* Make them consistent with other buttons in width */
-        height: 180px;
-        font-size: 1.8rem;
-        max-width: 350px; /* Set a max-width for consistency */
-    }
-    /* You might want to remove the specific left/right margins for b3 and b4 if you want perfectly centered rows on desktop */
-    .b3 {
-        margin-left: 0; /* Remove specific margin on desktop if you want balanced spacing */
-    }
-}
-
-
-.b0:hover,
-.b1:hover,
-.b2:hover,
-.b3:hover,
-.b4:hover {
-    background-color: rgba(255, 255, 255, 0.85);
-    color: #001f3f;
-    transform: scale(1.08);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    text-shadow: none;
-}
-
-/* --------------------------
-    Header and Footer
---------------------------- */
-
-.nav a {
-    color: #a7e0e3;
-    margin: 0 1rem;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.nav a:hover {
-    color: white;
-}
-
-/* --------------------------
-    Animations
---------------------------- */
-@keyframes fallIn {
-    0% {
-        opacity: 0;
-        transform: translateY(-80px);
-    }
-    80% {
-        transform: translateY(10px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeSlideDown {
-    0% {
-        opacity: 0;
-        transform: translateY(-40px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes dropIn {
-    from {
-        opacity: 0;
-        transform: translateY(-60px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* --------------------------
-    Responsive Design
---------------------------- */
+.in{
+    width: 80%;
+    padding: 8px;
+    margin-top: 10px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #E3E8EF;
+    border: 1px solid #CCCCCC;
+    height: 100px;
+} 
