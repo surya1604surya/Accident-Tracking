@@ -1,4 +1,5 @@
 .homeBody {
+  /* display: flex; */
   flex-direction: column;
   height: 100vh;
   position: relative;
@@ -14,7 +15,6 @@
   animation: fadeSlideDown 1.2s ease-in-out both;
   width: 100%;
   box-sizing: border-box;
-  padding: 1rem;
 }
 
 /* --------------------------
@@ -37,15 +37,15 @@
 --------------------------- */
 .firstRow,
 .secondRow {
-  margin-top: 5%;
+  margin-top: 15%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 2rem;
   width: 100%;
-  animation: dropIn 1s ease forwards;
   box-sizing: border-box;
+  animation: dropIn 1s ease forwards;
 }
 
 /* --------------------------
@@ -56,11 +56,10 @@
 .b2,
 .b3,
 .b4 {
-  flex: 1 1 280px;
-  max-width: 300px;
-  height: 150px;
+  width: 30%;
+  height: 180px;
   border-radius: 15px;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 600;
   text-align: center;
   display: flex;
@@ -80,11 +79,27 @@
   box-sizing: border-box;
 }
 
-.b0 { animation-delay: 0.2s; }
-.b1 { animation-delay: 0.4s; }
-.b2 { animation-delay: 0.6s; }
-.b3 { animation-delay: 0.8s; }
-.b4 { animation-delay: 1s; }
+.b0 {
+  animation-delay: 0.2s;
+}
+.b1 {
+  animation-delay: 0.4s;
+}
+.b2 {
+  animation-delay: 0.6s;
+}
+.b3 {
+  animation-delay: 0.8s;
+  margin-left: 10%;
+}
+.b4 {
+  animation-delay: 1s;
+}
+
+.b3,
+.b4 {
+  width: 30%;
+}
 
 /* --------------------------
    Button Hover Effects
@@ -98,6 +113,7 @@
   color: #001f3f;
   transform: scale(1.08);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  text-shadow: none;
 }
 
 /* --------------------------
@@ -182,58 +198,46 @@
 /* --------------------------
    Responsive Design
 --------------------------- */
-
-/* Mobile Phones */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .b0,
   .b1,
   .b2,
   .b3,
   .b4 {
-    width: 90%;
-    height: 120px;
-    font-size: 1.1rem;
+    width: 85%;
+    height: 140px;
+    font-size: 1.2rem;
+  }
+
+  .b3,
+  .b4 {
+    width: 85%;
   }
 
   .maintag {
-    gap: 1rem;
+    gap: 2rem;
   }
 
   .title {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 }
 
-/* Tablets */
-@media (min-width: 601px) and (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1024px) {
   .b0,
   .b1,
-  .b2,
+  .b2 {
+    width: 28%;
+    height: 160px;
+    font-size: 1.5rem;
+  }
+
   .b3,
   .b4 {
     width: 40%;
-    height: 140px;
-    font-size: 1.3rem;
   }
 
   .title {
-    font-size: 1.8rem;
-  }
-}
-
-/* Desktops */
-@media (min-width: 1025px) {
-  .b0,
-  .b1,
-  .b2,
-  .b3,
-  .b4 {
-    width: 30%;
-    height: 180px;
-    font-size: 1.8rem;
-  }
-
-  .title {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 }
