@@ -5,7 +5,8 @@
     min-height: 100vh; /* Use min-height for content flexibility */
     position: relative;
     overflow-x: hidden; /* Prevent horizontal scroll on small screens */
-    /* Remove max-h-screen to allow content to push the footer down if needed */
+    /* Removed max-h-screen from the main container as it can cause content clipping if content exceeds viewport height.
+       The 'min-h-screen' ensures it's at least viewport height, allowing for scrolling if content is taller. */
 }
 
 /* Adjust maintag for smaller screens */
@@ -13,10 +14,12 @@
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem; /* Add some padding to prevent content from touching edges */
-    gap: 1.5rem; /* Slightly reduce gap on smaller screens if desired */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    padding: 1.5rem; /* Increased overall padding for better spacing from edges */
+    padding-top: 5rem; /* Added specific padding to the top to push content down from header */
+    padding-bottom: 2rem; /* Added specific padding to the bottom to give space above footer */
+    gap: 2rem; /* Consistent gap between rows */
     width: 100%;
     box-sizing: border-box;
     animation: fadeSlideDown 1.2s ease-in-out both;
@@ -25,14 +28,16 @@
 /* Button Rows: Adjust margin and spacing for smaller screens */
 .firstRow,
 .secondRow {
-    margin-top: 5%; /* Reduce top margin for better vertical space usage */
+    /* Removed margin-top and margin-bottom from rows.
+       The vertical spacing is now primarily managed by 'padding-top'/'padding-bottom' on .maintag
+       and 'gap' on .maintag between the rows. */
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Center buttons within the row */
     align-items: center;
     flex-wrap: wrap;
-    gap: 1.2rem; /* Consistent gap for buttons within rows */
-    width: 100%;
-    box-sizing: border-box;
+    gap: 1.5rem; /* Adjusted gap within rows for better spacing */
+    width: 100%; /* Ensure rows take full width to center their content */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
     animation: dropIn 1s ease forwards;
 }
 
@@ -87,17 +92,26 @@
     padding: 1rem 0.8rem; /* Adjust padding for smaller screens */
 }
 .title {
-    font-size: 1.8rem; /* Base font size for header title */
+    color: #a7e0e3;
+    font-size: 2.2rem; /* Keep original large size */
+    font-weight: bold;
+    text-shadow: 1px 1px 4px black;
 }
 
 /* --- Responsive Design Adjustments --- */
 
 /* Phone Size (up to 767px) - Mobile-first approach is handled by base styles */
 @media (max-width: 767px) {
+    .maintag {
+        padding-top: 3rem; /* Less top padding on phones */
+        padding-bottom: 1.5rem; /* Less bottom padding on phones */
+        gap: 1rem; /* Smaller gap between rows on phones */
+    }
+
     .firstRow,
     .secondRow {
-        margin-top: 2%; /* Further reduce top margin for mobile */
-        gap: 1rem; /* Slightly smaller gap on phones */
+        /* Removed margin-top: 2% from here */
+        gap: 1rem; /* Slightly smaller gap within rows on phones */
     }
 
     .b0, .b1, .b2, .b3, .b4 {
@@ -114,10 +128,16 @@
 
 /* Tablet Size (768px to 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
+    .maintag {
+        padding-top: 4rem; /* Moderate top padding for tablets */
+        padding-bottom: 2rem; /* Moderate bottom padding for tablets */
+        gap: 1.5rem; /* Moderate gap between rows */
+    }
+
     .firstRow,
     .secondRow {
-        margin-top: 10%; /* Moderate margin for tablets */
-        gap: 1.5rem; /* Slightly larger gap than phones */
+        /* Removed margin-top: 10% from here */
+        gap: 1.5rem; /* Slightly larger gap within rows than phones */
     }
 
     .b0, .b1, .b2 {
@@ -141,10 +161,16 @@
 
 /* Desktop Size (1025px and up) */
 @media (min-width: 1025px) {
+    .maintag {
+        padding-top: 5rem; /* Original top padding for desktop */
+        padding-bottom: 2rem; /* Original bottom padding for desktop */
+        gap: 2rem; /* Original gap for desktop */
+    }
+
     .firstRow,
     .secondRow {
-        margin-top: 15%; /* Original margin for desktop */
-        gap: 2rem; /* Original gap for desktop */
+        /* Removed margin-top: 15% from here */
+        gap: 2rem; /* Original gap within rows for desktop */
     }
 
     .b0, .b1, .b2 {
@@ -165,6 +191,7 @@
         margin-left: 0; /* Remove specific margin on desktop if you want balanced spacing */
     }
 }
+
 
 .b0:hover,
 .b1:hover,
