@@ -1,15 +1,14 @@
 export default function SuccessPage() {
   return (
-    <div style={styles.container}>
+    <div style={styles.fullPage}>
       <div style={styles.card}>
         <h1 style={styles.heading}>✅ Thank You So Much!</h1>
         <h2 style={styles.subheading}>
           Your message has been delivered successfully 🎉
         </h2>
         <p style={styles.paragraph}>
-          We truly appreciate your effort in providing the information. Your
-          response has been received, and the necessary actions have been taken.
-          Thank you for making a difference — it means a lot!
+          We truly appreciate your effort in providing the information. Your response has been received,
+          and the necessary actions have been taken. Thank you for making a difference — it means a lot!
         </p>
         <a href="/" style={styles.link}>Go back to Home</a>
       </div>
@@ -18,43 +17,45 @@ export default function SuccessPage() {
 }
 
 const styles = {
-  container: {
-    minHeight: "100vh",
-    background: "linear-gradient(to right, #FFFDE7, #E1F5FE)", // soft yellow to blue
+  fullPage: {
+    height: "100vh",
+    width: "100vw",
+    background: "linear-gradient(to right, #FFFDE7, #E1F5FE)", // Light yellow to light blue
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    padding: "2rem",
+    padding: "1rem",
     boxSizing: "border-box",
   },
   card: {
-    background: "#ffffff",
+    backgroundColor: "#ffffff",
     padding: "2rem",
-    borderRadius: "16px",
-    boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
+    borderRadius: "12px",
+    boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
     textAlign: "center",
     maxWidth: "600px",
     width: "100%",
   },
   heading: {
+    color: "#2E7D32", // Green
     fontSize: "2rem",
-    color: "#2E7D32", // green success
     marginBottom: "1rem",
   },
   subheading: {
-    fontSize: "1.3rem",
-    color: "#333",
+    color: "#444",
+    fontSize: "1.2rem",
     marginBottom: "1rem",
   },
   paragraph: {
-    fontSize: "1rem",
     color: "#555",
+    fontSize: "1rem",
+    lineHeight: "1.6",
     marginBottom: "1.5rem",
   },
   link: {
     color: "#1565C0",
     textDecoration: "none",
     fontWeight: "bold",
+    fontSize: "1rem",
   },
 };
-
