@@ -13,6 +13,7 @@ export default function Page4() {
   }, []);
 
   return (
+    <div className={styles.homeBody}>
     <div className={styles.div1}>
       <h2>🛑 Important Safety Measures While Traveling 🛑</h2>
 
@@ -77,6 +78,6 @@ export default function Page4() {
           <p><b>Emergency Preparedness:</b> Save important helpline numbers and inform family about your travel route.</p>
         </div>
       </div>
-    </div>
+    </div> </div>
   );
 }
