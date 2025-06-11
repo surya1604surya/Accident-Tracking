@@ -1,8 +1,224 @@
+/* --------------------------
+   Body & Layout
+--------------------------- */
 .homeBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #B3E5D6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.maintag {
+  margin-top: 8%;
+  width: 100%;
+  padding: 1rem;
+  animation: fadeSlideDown 1.2s ease-in-out both;
+}
+
+/* --------------------------
+   Background Video
+--------------------------- */
+.backgroundVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.85;
+  filter: brightness(0.85);
+}
+
+/* --------------------------
+   Button Rows
+--------------------------- */
+.firstRow,
+.secondRow {
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  animation: dropIn 1s ease forwards;
+}
+
+/* --------------------------
+   Buttons
+--------------------------- */
+.b0, .b1, .b2, .b3, .b4 {
+  width: 22%;
+  height: 180px;
+  border-radius: 15px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: fallIn 0.8s ease-in-out forwards;
+}
+
+/* Sequential Animation Delay */
+.b0 { animation-delay: 0.2s; }
+.b1 { animation-delay: 0.4s; }
+.b2 { animation-delay: 0.6s; }
+.b3 { animation-delay: 0.8s; }
+.b4 { animation-delay: 1s; }
+
+.b3, .b4 {
+  width: 32%;
+}
+
+/* --------------------------
+   Button Hover Effects
+--------------------------- */
+.b0:hover,
+.b1:hover,
+.b2:hover,
+.b3:hover,
+.b4:hover {
+  background-color: rgba(255, 255, 255, 0.85);
+  color: #001F3F;
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  text-shadow: none;
+}
+
+/* --------------------------
+   Header and Footer
+--------------------------- */
+.header {
+  width: 100%;
+  background-color: #001F3F;
+  border-bottom: 2px solid #A7E0E3;
+  padding: 1rem;
+  text-align: center;
+}
+
+.title {
+  color: #A7E0E3;
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 4px black;
+}
+
+.nav a {
+  color: #A7E0E3;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  color: white;
+}
+
+.footer {
+  width: 100%;
+  background-color: #001F3F;
+  color: #A7E0E3;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+}
+
+/* --------------------------
+   Animations
+--------------------------- */
+@keyframes fallIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+  80% {
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dropIn {
+  from {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------------------------
+   Responsive Design
+--------------------------- */
+@media (max-width: 768px) {
+  .b0, .b1, .b2, .b3, .b4 {
+    width: 85%;
+    height: 140px;
+    font-size: 1.2rem;
+  }
+
+  .b3, .b4 {
+    width: 85%;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .b0, .b1, .b2 {
+    width: 28%;
+    height: 160px;
+    font-size: 1.5rem;
+  }
+
+  .b3, .b4 {
+    width: 40%;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+}
+
+
+
+
+/* .homeBody {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #B3E5D6; /* Apply the body background here */
+    background-color: #B3E5D6; 
 }
 .maintag{
   margin-top: 10%;
@@ -26,7 +242,7 @@
 .b0, .b1, .b2, .b3, .b4 {
   width: 25%;
   height: 200px;
-  /* background: #7ecb90; */
+ 
   border-radius: 10px;
   font-size: 50px;
   text-align: center;
@@ -82,5 +298,6 @@
   width: 100vw;
   height: 100vh;
   object-fit: cover;
-  z-index: -1; /* Puts video behind other content */
+  z-index: -1; 
 }
+ */
