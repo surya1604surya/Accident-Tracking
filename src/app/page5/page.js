@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 
 export default function Page4() {
   return (
+    <div className={styles.homeBody}>
     <div className={styles.container}>
       <h2 className={styles.title}>🚗 Steps to Register in Our Website 🚗</h2>
       
@@ -30,7 +31,7 @@ export default function Page4() {
           <li className={styles.listItem}>Submit the form to complete the registration.</li>
           <li className={styles.listItem}>The data is stored for future use, allowing users to access relevant services.</li>
         </ul>
-      </div>
+      </div> </div>
     </div>
   );
 }
