@@ -89,6 +89,7 @@ export default function Page1() {
   };
 
   return (
+    <div className={styles.homeBody}>
     <div className={styles.div1}>
       <h1>Sign Up</h1>
       <form onSubmit={handleSubmit}>
@@ -141,5 +142,6 @@ export default function Page1() {
         <button type="submit" className={styles.sb}>Submit</button>
       </form>
     </div>
+ </div>
   );
 }
