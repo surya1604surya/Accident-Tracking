@@ -1,4 +1,3 @@
-// models/User.js
 import mongoose from "mongoose";
 
 const UserSchema = new mongoose.Schema({
@@ -8,4 +7,5 @@ const UserSchema = new mongoose.Schema({
   email2: { type: String, required: true },
 });
 
+// Use cached model to prevent overwrite warning
 export default mongoose.models.User || mongoose.model("User", UserSchema);
