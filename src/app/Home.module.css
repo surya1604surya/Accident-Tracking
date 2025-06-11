@@ -166,75 +166,72 @@
     }
 }
 
-
 .b0:hover,
 .b1:hover,
 .b2:hover,
 .b3:hover,
 .b4:hover {
-  background-color: rgba(255, 255, 255, 0.85);
-  color: #001f3f;
-  transform: scale(1.08);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-  text-shadow: none;
+    background-color: rgba(255, 255, 255, 0.85);
+    color: #001f3f;
+    transform: scale(1.08);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    text-shadow: none;
 }
 
 /* --------------------------
-   Header and Footer
+    Header and Footer
 --------------------------- */
 
-
 .nav a {
-  color: #a7e0e3;
-  margin: 0 1rem;
-  text-decoration: none;
-  font-weight: 500;
+    color: #a7e0e3;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: 500;
 }
 
 .nav a:hover {
-  color: white;
+    color: white;
 }
 
-
 /* --------------------------
-   Animations
+    Animations
 --------------------------- */
 @keyframes fallIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-80px);
-  }
-  80% {
-    transform: translateY(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    0% {
+        opacity: 0;
+        transform: translateY(-80px);
+    }
+    80% {
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes fadeSlideDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    0% {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes dropIn {
-  from {
-    opacity: 0;
-    transform: translateY(-60px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(-60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* --------------------------
-   Responsive Design
+    Responsive Design
 --------------------------- */
