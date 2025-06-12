@@ -1,6 +1,6 @@
 /* Full page background with no black edges */
 .homeBody {
-  background: linear-gradient(to right, #fffde7, #fce4ec); /* pastel gradient */
+  background: linear-gradient(to right, #fffde7, #fce4ec);
   height: 100vh;
   width: 100vw;
   display: flex;
