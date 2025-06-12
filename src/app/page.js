@@ -58,7 +58,6 @@ export default function Home() {
           </button>
         </div>
       </main>
-      <Footer />
     </div>
   );
 }
