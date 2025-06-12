@@ -26,15 +26,16 @@ export default function Header() {
 
   return (
     <header className={styles.header}>
-      <h1 className={styles.title}>ACCIDENT TRACKING</h1>
-
-      <div className={styles.menuToggle} onClick={() => setIsMenuOpen(!isMenuOpen)}>
-        <Image
-          src={isMenuOpen ? "/arrows (2).png" : "/arrows (1).png"}
-          alt="Toggle Menu"
-          width={24}
-          height={24}
-        />
+      <div className={styles.headerTop}>
+        <h1 className={styles.title}>ACCIDENT TRACKING</h1>
+        <div className={styles.menuToggle} onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <Image
+            src={isMenuOpen ? "/arrows (2).png" : "/arrows (1).png"}
+            alt="Toggle Menu"
+            width={24}
+            height={24}
+          />
+        </div>
       </div>
 
       <nav className={`${styles.nav} ${isMenuOpen ? styles.show : styles.hide}`}>
