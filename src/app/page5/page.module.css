@@ -1,46 +1,101 @@
+@keyframes fallIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .homeBody {
-  background: linear-gradient(to right, #fffde7, #fce4ec); /* pastel gradient */
+  background: linear-gradient(to right, #fffde7, #fce4ec);
   height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   padding: 2rem;
   box-sizing: border-box;
-  overflow: hidden; /* prevents scrollbars if unnecessary */
-  color:black;
+  overflow-y: auto;
+  color: black;
+  scroll-behavior: smooth;
 }
 
 .container {
-    width: 70%;
-    margin: auto;
-    padding: 20px;
-    background: #FFF2F2;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    text-align: left;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background: #fff2f2;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  animation: fallIn 0.8s ease-out forwards;
 }
 
 .title {
-    text-align: center;
-    color: #D76C82;
+  text-align: center;
+  color: #d76c82;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
 }
 
 .section {
-    margin-top: 20px;
-    background: #FCE4EC;
-    padding: 15px;
-    border-radius: 8px;
+  margin-top: 20px;
+  background: #fce4ec;
+  padding: 15px;
+  border-radius: 8px;
+  animation: fallIn 0.8s ease forwards;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation-fill-mode: forwards;
+}
+
+.section:nth-of-type(1) {
+  animation-delay: 0.2s;
+}
+.section:nth-of-type(2) {
+  animation-delay: 0.4s;
 }
 
 .sectionTitle {
-    color: #D76C82;
+  color: #d76c82;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
 }
 
 .list {
-    padding-left: 20px;
+  padding-left: 20px;
 }
 
 .listItem {
-    margin-bottom: 8px;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.5rem;
+  }
+  .sectionTitle {
+    font-size: 1.1rem;
+  }
+  .listItem {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.3rem;
+  }
+  .sectionTitle {
+    font-size: 1rem;
+  }
+  .listItem {
+    font-size: 0.9rem;
+  }
 }
