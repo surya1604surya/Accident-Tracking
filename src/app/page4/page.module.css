@@ -134,4 +134,7 @@
   .p {
     font-size: 0.88rem;
   }
+  .ko{
+    display:none;
+  }
 }
