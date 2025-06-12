@@ -1,62 +1,101 @@
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Push items apart */
-    height: 60px;
-    width: 100vw; /* Full width */
-    padding: 10px 20px;
-    /* background-color: rgb(230, 255, 7); */
-    /* border-bottom: 2px solid rgb(85, 111, 5); */
-    position: fixed; /* Fix header at top */
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000; /* Ensure it's above other content */
-    box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  width: 100vw;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+  background-color: #fff;
 }
 
-/* Title (ACCIDENT TRACKING) */
 .title {
-    font-size: 24px;
-    font-weight: bold;
-    color: black;
-    text-transform: uppercase;
-    white-space: nowrap; /* Prevent text from wrapping */
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
-/* Navigation links */
+.menuToggle {
+  display: none;
+  cursor: pointer;
+}
+
 .nav {
-    display: flex;
-    gap: 30px; /* Space between links */
-    flex-wrap: wrap; /* Prevent overflow on small screens */
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
 .nav a {
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
-    font-weight: bold;
-    transition: 0.3s;
-    white-space: nowrap; /* Prevent text breaking */
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  transition: 0.3s;
+  white-space: nowrap;
 }
 
 .nav a:hover {
-    color: brown;
-    font-size: 20px;
+  color: brown;
+  font-size: 20px;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
-    .header {
-        flex-direction: column; /* Stack items on smaller screens */
-        height: auto;
-        padding: 15px;
-        text-align: center;
-    }
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 15px;
+  }
 
-    .nav {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
+  .title {
+    font-size: 20px;
+  }
+
+  .menuToggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  .nav {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    transition: max-height 0.3s ease;
+    overflow: hidden;
+  }
+
+  .hide {
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .show {
+    max-height: 300px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav a {
+    font-size: 16px;
+  }
 }
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 18px;
+  }
+
+  .nav a {
+    font-size: 15px;
+  }
+}
+
