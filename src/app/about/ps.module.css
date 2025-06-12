@@ -1,4 +1,15 @@
 /* ps.module.css */
+.homeBody {
+  background: linear-gradient(to right, #eeaaaa, #f56969); /* pastel gradient */
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  overflow: hidden; /* prevents scrollbars if unnecessary */
+}
 .psHtmlBody { /* Changed from html, body to .psHtmlBody */
     height: 100%;
     margin: 0;
