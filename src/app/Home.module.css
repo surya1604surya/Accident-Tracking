@@ -1,8 +1,11 @@
+/* Home.module.css */
+
 .homeBody {
   flex-direction: column;
   height: 100vh;
   position: relative;
   overflow: hidden;
+  display: flex;
 }
 
 .maintag {
@@ -30,7 +33,7 @@
 
 .firstRow,
 .secondRow {
-  margin-top: 15%;
+  margin-top: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -72,12 +75,8 @@
 .b0 { animation-delay: 0.2s; }
 .b1 { animation-delay: 0.4s; }
 .b2 { animation-delay: 0.6s; }
-.b3 { animation-delay: 0.8s; margin-left: 10%; }
+.b3 { animation-delay: 0.8s; }
 .b4 { animation-delay: 1s; }
-
-.b3, .b4 {
-  width: 30%;
-}
 
 .b0:hover,
 .b1:hover,
@@ -93,8 +92,7 @@
 
 .header {
   width: 100%;
-  background-color: #001f3f;
-  border-bottom: 2px solid #a7e0e3;
+  background-color: transparent;
   padding: 1rem;
   text-align: center;
   box-sizing: border-box;
@@ -126,6 +124,8 @@
   padding: 1rem;
   margin-top: auto;
   box-sizing: border-box;
+  position: relative;
+  bottom: 0;
 }
 
 @keyframes fallIn {
@@ -145,14 +145,25 @@
 }
 
 @media (max-width: 768px) {
-  .b0, .b1, .b2, .b3, .b4 {
-    width: 85%;
-    height: 140px;
-    font-size: 1.2rem;
+  .firstRow,
+  .secondRow {
+    margin-top: 5%;
+    gap: 1rem;
+  }
+
+  .b0,
+  .b1,
+  .b2,
+  .b3,
+  .b4 {
+    width: 45%;
+    height: 120px;
+    font-size: 1.1rem;
+    margin: 0;
   }
 
   .maintag {
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .title {
@@ -161,13 +172,16 @@
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-  .b0, .b1, .b2 {
+  .b0,
+  .b1,
+  .b2 {
     width: 28%;
     height: 160px;
     font-size: 1.5rem;
   }
 
-  .b3, .b4 {
+  .b3,
+  .b4 {
     width: 40%;
   }
 
