@@ -2,6 +2,7 @@ import styles from './contact.module.css';
 
 export default function Contact() {
   return (
+    <div className={styles.homeBody}>
     <div className={styles.container}>
       <h1 className={styles.title}>Contact Us</h1>
       <h2 className={styles.subtitle}>Web Site: Accident Tracking</h2>
@@ -14,5 +15,6 @@ export default function Contact() {
         <p className={styles.contactInfoDescription}>Save Life</p>
       </div>
     </div>
+  </div>
   );
 }
