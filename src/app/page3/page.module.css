@@ -107,3 +107,30 @@
     font-size: 20px;
   }
 }
+/* Keyframes for falling animation */
+@keyframes fallIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation to container */
+.div1 {
+  width: 70%;
+  max-width: 800px;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  background: #FFF2F2;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+  margin: auto;
+  margin-top: 50px;
+  
+  animation: fallIn 0.8s ease-out forwards;
+}
