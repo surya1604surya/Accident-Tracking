@@ -1,7 +1,6 @@
 .header {
   width: 100%;
-  background-color: transparent; /* Removed background */
-  border-bottom: none; /* Remove if you don't want the border line */
+  background-color: transparent;
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -10,20 +9,29 @@
   position: relative;
 }
 
-/* Optional: Adjust title color for contrast on light/dark backgrounds */
 .title {
-  color: #ffffff; /* Light text for visibility */
+  color: #ffffff;
   font-size: 2.2rem;
   font-weight: bold;
   text-shadow: 1px 1px 4px black;
 }
 
-/* Keep mobile nav styles */
+.menuToggle {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #a7e0e3;
+  display: block;
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+}
+
+/* Hidden by default (on desktop) */
 .nav {
   display: none;
   flex-direction: column;
   align-items: flex-end;
-  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent for mobile dropdown */
+  background-color: rgba(0, 0, 0, 0.6);
   position: absolute;
   top: 60px;
   right: 20px;
@@ -48,13 +56,7 @@
   color: white;
 }
 
-.menuToggle {
-  font-size: 2rem;
-  cursor: pointer;
-  color: #a7e0e3;
-}
-
-/* Desktop View */
+/* For desktop and larger tablets */
 @media (min-width: 768px) {
   .menuToggle {
     display: none;
@@ -73,4 +75,3 @@
     margin-left: 2rem;
   }
 }
-
