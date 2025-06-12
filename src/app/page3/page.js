@@ -15,7 +15,7 @@ export default function Page1() {
   return (
     <div className={styles.homeBody}>
     <div className={styles.div1}>
-      <h2>🚨 Road Accident Emergency Numbers in India 🚨</h2>
+      <h2 className={styles.h2}>🚨 Road Accident Emergency Numbers in India 🚨</h2>
       <div className={styles.tableContainer}>
         <table className={styles.table}>
           <thead>
