@@ -1,7 +1,7 @@
 .header {
   width: 100%;
-  background-color: #001f3f;
-  border-bottom: 2px solid #a7e0e3;
+  background-color: transparent; /* Removed background */
+  border-bottom: none; /* Remove if you don't want the border line */
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -10,18 +10,20 @@
   position: relative;
 }
 
+/* Optional: Adjust title color for contrast on light/dark backgrounds */
 .title {
-  color: #a7e0e3;
+  color: #ffffff; /* Light text for visibility */
   font-size: 2.2rem;
   font-weight: bold;
   text-shadow: 1px 1px 4px black;
 }
 
+/* Keep mobile nav styles */
 .nav {
   display: none;
   flex-direction: column;
   align-items: flex-end;
-  background-color: #001f3f;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent for mobile dropdown */
   position: absolute;
   top: 60px;
   right: 20px;
@@ -71,3 +73,4 @@
     margin-left: 2rem;
   }
 }
+
