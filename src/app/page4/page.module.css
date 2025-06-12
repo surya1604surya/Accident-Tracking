@@ -1,55 +1,137 @@
+/* Animation for falling effect */
+@keyframes fallIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Container */
 .homeBody {
-  background: linear-gradient(to right, #fffde7, #fce4ec); /* pastel gradient */
+  background: linear-gradient(to right, #fffde7, #fce4ec);
   height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 2rem;
+  align-items: flex-start;
+  padding: 1rem;
   box-sizing: border-box;
-  color:black;
-  overflow: hidden; /* prevents scrollbars if unnecessary */
+  color: black;
+  overflow-y: auto; /* Allow vertical scroll */
+  scroll-behavior: smooth;
 }
+
+/* Card Container */
 .div1 {
-    width: 70%;
-    max-width: 800px;
-    padding: 25px;
-    border-radius: 12px;
-    text-align: center;
-    background: #FFF2F2;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    margin: auto;
-    margin-top: 50px;
+  width: 100%;
+  max-width: 900px;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  background: #fff2f2;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin: 20px auto;
+  animation: fallIn 0.8s ease-out forwards;
 }
 
-/* Safety Rules Section */
+/* Heading */
+.div1 h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+/* Safety Rules Grid */
 .safetyContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
 }
 
+/* Each Rule */
 .safetyRule {
-    display: flex;
-    align-items: center;
-    width: 90%;
-    max-width: 600px;
-    background: #FAF0F4;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  background: #faf0f4;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  animation: fallIn 0.7s ease forwards;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation-delay: var(--delay, 0s);
+  animation-fill-mode: forwards;
+  transition: transform 0.3s ease-in-out;
 }
 
+/* Hover effect */
 .safetyRule:hover {
-    transform: scale(1.03);
-    background: #FFE4E4;
+  transform: scale(1.03);
+  background: #ffe4e4;
 }
 
+/* Image inside rule */
 .safetyImage {
-    width: 50px;
-    height: 50px;
-    margin-right: 15px;
+  width: 45px;
+  height: 45px;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+/* Responsive Text */
+.safetyRule p {
+  font-size: 1rem;
+  line-height: 1.4;
+  text-align: left;
+  margin: 0;
+}
+
+/* RESPONSIVE QUERIES */
+@media (max-width: 768px) {
+  .div1 {
+    padding: 15px;
+  }
+
+  .div1 h2 {
+    font-size: 1.5rem;
+  }
+
+  .safetyRule {
+    padding: 12px;
+  }
+
+  .safetyImage {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+
+  .safetyRule p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .div1 {
+    padding: 10px;
+  }
+
+  .div1 h2 {
+    font-size: 1.3rem;
+  }
+
+  .safetyImage {
+    width: 35px;
+    height: 35px;
+  }
+
+  .safetyRule p {
+    font-size: 0.88rem;
+  }
 }
