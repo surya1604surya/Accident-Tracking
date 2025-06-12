@@ -1,90 +1,73 @@
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  width: 100vw;
-  padding: 10px 20px;
-  box-sizing: border-box;
-}
-
-.headerTop {
+  width: 100%;
+  background-color: #001f3f;
+  border-bottom: 2px solid #a7e0e3;
+  padding: 1rem 2rem;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative;
 }
 
-/* Title */
 .title {
-  font-size: 24px;
+  color: #a7e0e3;
+  font-size: 2.2rem;
   font-weight: bold;
-  color: black;
-  text-transform: uppercase;
-  white-space: nowrap;
+  text-shadow: 1px 1px 4px black;
 }
 
-/* Toggle Icon */
-.menuToggle {
-  cursor: pointer;
-}
-
-/* Navigation Menu */
 .nav {
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  background-color: #001f3f;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #a7e0e3;
+}
+
+.nav.show {
   display: flex;
-  gap: 30px;
 }
 
 .nav a {
+  color: #a7e0e3;
   text-decoration: none;
-  color: black;
-  font-size: 18px;
-  font-weight: bold;
-  transition: 0.3s;
+  padding: 0.5rem 0;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
 .nav a:hover {
-  color: brown;
-  font-size: 20px;
+  color: white;
 }
 
-/* --- Responsive --- */
-@media (max-width: 768px) {
+.menuToggle {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #a7e0e3;
+}
+
+/* Desktop View */
+@media (min-width: 768px) {
+  .menuToggle {
+    display: none;
+  }
+
   .nav {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    transition: max-height 0.3s ease;
-    overflow: hidden;
-  }
-
-  .hide {
-    max-height: 0;
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  .show {
-    max-height: 300px;
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .title {
-    font-size: 20px;
+    display: flex !important;
+    flex-direction: row;
+    position: static;
+    background: none;
+    border: none;
+    padding: 0;
   }
 
   .nav a {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 480px) {
-  .title {
-    font-size: 18px;
-  }
-
-  .nav a {
-    font-size: 15px;
+    margin-left: 2rem;
   }
 }
